@@ -30,3 +30,84 @@
     }
   }
 }
+
+.menu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  opacity: 0.9;
+  visibility: hidden;
+
+  &.show {
+    visibility: visible;
+  }
+
+  &-nav,
+  &-branding {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    width: 50%;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  &-nav {
+    margin: 0;
+    padding: 0;
+    background: darken($primary-color, 5);
+    transform: translate3d(0, -100%, 0);
+    @include easeout;
+    &.show {
+      //slide in from top
+      transform: translate3d(0, 0, 0);
+    }
+
+    .nav-item {
+      font-size: 1.8rem;
+      font-weight: 600;
+      list-style: none;
+      line-height: 3;
+      transform: translate3d(600px, 0, 0);
+
+      &.show {
+        @include easeout;
+        transform: translate3d(0, 0, 0);
+      }
+
+      :hover {
+        @include easeout;
+        color: $secondary-color;
+      }
+
+      &.current > a {
+        color: $secondary-color;
+      }
+    }
+  }
+
+  &-branding {
+    margin: 0;
+    padding: 0;
+    background: darken($primary-color, 3);
+    transform: translate3d(0, 100%, 0);
+    @include easeout;
+    &.show {
+      //slide form bottom
+      transform: translate3d(0, 0, 0);
+    }
+
+    .my-image {
+      width: 250px;
+      height: 250px;
+      background: url("../img/mypic.jpg");
+      background-size: cover;
+      border-radius: 50%;
+      opacity: 1;
+      z-index: 4;
+      border: 3px solid $secondary-color;
+    }
+  }
+}
