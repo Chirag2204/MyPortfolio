@@ -1,6 +1,5 @@
 @import "config";
 @import "menu";
-@import "mobile";
 
 * {
   box-sizing: border-box;
@@ -8,11 +7,17 @@
 
 body {
   @include background;
-  background-color: $primary-color;
-  color: $text-color;
+  background-color: set-primary-color($theme);
+  color: set-text-color($theme);
   margin: 0;
   line-height: 1.5;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+  .overlay {
+    animation: fadeinAnimation ease 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
 }
 
 //Headings
@@ -28,13 +33,13 @@ h3 {
   &.sm-heading {
     margin-bottom: 2rem;
     padding: 0.2rem 1rem;
-    background: rgba(lighten($primary-color, 2), 0.5);
+    background: rgba(lighten(set-primary-color($theme), 2), 0.5);
     font-size: 1.5rem;
   }
 }
 
 a {
-  color: #fff;
+  color: set-text-color($theme);
   text-decoration: none;
 }
 
@@ -45,7 +50,7 @@ header {
 }
 
 .text-secondary {
-  color: $secondary-color;
+  color: set-secondary-color($theme);
 }
 
 main {
@@ -59,7 +64,7 @@ main {
       padding: 0.4rem;
       font-size: 1.5rem;
       &:hover {
-        color: $secondary-color;
+        color: set-secondary-color($theme);
         font-size: 2rem;
         @include easeout();
       }
@@ -72,3 +77,97 @@ main {
     }
   }
 }
+
+/////////about page css/////////////////////////
+
+.about-info {
+  display: grid;
+  grid-row-gap: 30px;
+  grid-template-areas: auto;
+  align-items: center;
+
+  .mybio {
+    display: grid;
+    grid-column-gap: 30px;
+    grid-template-columns: auto auto;
+    grid-template-areas: 1rf 2rf;
+    animation: comefromrightAnimation ease 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+
+    .bio-image {
+      border-radius: 50%;
+      border: 2px solid set-secondary-color($theme);
+    }
+
+    .bio {
+      font-size: 1.1rem;
+
+      h3 {
+        font-size: 2rem;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .academics {
+    display: grid;
+    grid-gap: 40px;
+    grid-template-columns: auto auto auto;
+    grid-template-areas: 1fr 1fr 1fr;
+    animation: comefromdownAnimation ease 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+
+    .education {
+      border: 2px solid grey;
+      padding: 20px;
+      border-radius: 10%;
+      p {
+        font-size: 1.1rem;
+      }
+
+      h3 {
+        animation: comefromupAnimation ease 2s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+        font-size: 1.5rem;
+        font-weight: 700;
+      }
+    }
+  }
+
+  .heading {
+    animation: fadeinAnimation ease 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    font-size: 3rem;
+    font-weight: 800;
+    text-align: center;
+  }
+
+  .skills {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-areas: 1fr 1fr 1fr 1fr;
+    animation: fadeinAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    table {
+      td {
+        font-size: 15px;
+        font-weight: 500;
+        border: 2px solid grey;
+        padding: 5px 15px;
+      }
+    }
+  }
+}
+@import "mobile";

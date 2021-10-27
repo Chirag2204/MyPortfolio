@@ -1,15 +1,10 @@
-$primary-color: #444;
-$secondary-color: #eece1a;
-$text-color: #fff;
+$theme: dark;
+// $primary-color: set-primary-color($theme);
+// $secondary-color: set-secondary-color($theme);
+// $text-color: set-text-color($theme);
 $show-home-image: true;
 $home-image: url("/dist/img/background3.jpg");
 $opacity: 0.9;
-
-@mixin changetheme {
-  $primary-color: #fff;
-  $secondary-color: #3e53f0;
-  $text-color: #000;
-}
 
 @mixin background {
   @if $show-home-image {
@@ -22,15 +17,75 @@ $opacity: 0.9;
         width: 100%;
         top: 0;
         bottom: 0;
-        background-color: rgba($primary-color, $opacity);
+        background-color: rgba(set-primary-color($theme), $opacity);
         z-index: -1;
       }
     }
   }
 }
 
+@keyframes fadeinAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes comefromrightAnimation {
+  0% {
+    transform: translate3d(-600px, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes comefromupAnimation {
+  0% {
+    transform: translate3d(0, -600px, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes comefromdownAnimation {
+  0% {
+    transform: translate3d(0, 600px, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
 @mixin easeout {
   transition: all 0.5s ease-in-out;
+}
+
+@function set-text-color($theme) {
+  @if ($theme == dark) {
+    @return #fff;
+  } @else {
+    @return #000;
+  }
+}
+
+@function set-primary-color($theme) {
+  @if ($theme== dark) {
+    @return #444;
+  } @else {
+    @return #fff;
+  }
+}
+
+@function set-secondary-color($theme) {
+  @if ($theme== dark) {
+    @return #eece1a;
+  } @else {
+    @return rgb(73, 113, 223);
+  }
 }
 
 //Media Query Mixins

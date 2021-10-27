@@ -1,3 +1,27 @@
+@keyframes fadeinAnimation {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes comefromrightAnimation {
+  0% {
+    transform: translate3d(-600px, 0, 0); }
+  100% {
+    transform: translate3d(0, 0, 0); } }
+
+@keyframes comefromupAnimation {
+  0% {
+    transform: translate3d(0, -600px, 0); }
+  100% {
+    transform: translate3d(0, 0, 0); } }
+
+@keyframes comefromdownAnimation {
+  0% {
+    transform: translate3d(0, 600px, 0); }
+  100% {
+    transform: translate3d(0, 0, 0); } }
+
 .menu-btn {
   position: absolute;
   top: 2rem;
@@ -24,7 +48,6 @@
   position: fixed;
   top: 0;
   width: 100%;
-  opacity: 0.9;
   visibility: hidden; }
   .menu.show {
     visibility: visible; }
@@ -77,32 +100,6 @@
       z-index: 4;
       border: 3px solid #eece1a; }
 
-@media screen and (max-width: 768px) {
-  main {
-    align-items: center;
-    text-align: center; }
-    main .lg-heading {
-      line-height: 1;
-      margin-bottom: 2rem; }
-  ul.menu-nav,
-  div.menu-branding {
-    float: none;
-    width: 100%;
-    min-height: 0; }
-    ul.menu-nav.show,
-    div.menu-branding.show {
-      transform: translate3d(0, 0, 0); }
-  ul.menu-nav {
-    height: 65vh;
-    transform: translate3d(-100%, 0, 0); }
-  div.menu-branding {
-    height: 35vh;
-    transform: translate3d(100%, 0, 0); } }
-
-@media screen and (max-width: 500px) {
-  main#home h1 {
-    margin-top: 10vh; } }
-
 * {
   box-sizing: border-box; }
 
@@ -123,6 +120,10 @@ body {
       bottom: 0;
       background-color: rgba(68, 68, 68, 0.9);
       z-index: -1; }
+  body .overlay {
+    animation: fadeinAnimation ease 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards; }
 
 h1,
 h2,
@@ -169,3 +170,124 @@ main {
     overflow: hidden; }
     main#home h1 {
       margin-top: 20vh; }
+
+.about-info {
+  display: grid;
+  grid-row-gap: 30px;
+  grid-template-areas: auto;
+  align-items: center; }
+  .about-info .mybio {
+    display: grid;
+    grid-column-gap: 30px;
+    grid-template-columns: auto auto;
+    grid-template-areas: 1rf 2rf;
+    animation: comefromrightAnimation ease 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards; }
+    .about-info .mybio .bio-image {
+      border-radius: 50%;
+      border: 2px solid #eece1a; }
+    .about-info .mybio .bio {
+      font-size: 1.1rem; }
+      .about-info .mybio .bio h3 {
+        font-size: 2rem;
+        font-weight: 600; }
+  .about-info .academics {
+    display: grid;
+    grid-gap: 40px;
+    grid-template-columns: auto auto auto;
+    grid-template-areas: 1fr 1fr 1fr;
+    animation: comefromdownAnimation ease 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards; }
+    .about-info .academics .education {
+      border: 2px solid grey;
+      padding: 20px;
+      border-radius: 10%; }
+      .about-info .academics .education p {
+        font-size: 1.1rem; }
+      .about-info .academics .education h3 {
+        animation: comefromupAnimation ease 2s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+        font-size: 1.5rem;
+        font-weight: 700; }
+  .about-info .heading {
+    animation: fadeinAnimation ease 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    font-size: 3rem;
+    font-weight: 800;
+    text-align: center; }
+  .about-info .skills {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-areas: 1fr 1fr 1fr 1fr;
+    animation: fadeinAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards; }
+    .about-info .skills h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      font-weight: 600; }
+    .about-info .skills table td {
+      font-size: 15px;
+      font-weight: 500;
+      border: 2px solid grey;
+      padding: 5px 15px; }
+
+@media screen and (max-width: 768px) {
+  main {
+    align-items: center;
+    text-align: center; }
+    main .lg-heading {
+      line-height: 1;
+      margin-bottom: 2rem; }
+  ul.menu-nav,
+  div.menu-branding {
+    float: none;
+    width: 100%;
+    min-height: 0; }
+    ul.menu-nav.show,
+    div.menu-branding.show {
+      transform: translate3d(0, 0, 0); }
+  ul.menu-nav {
+    height: 65vh;
+    transform: translate3d(-100%, 0, 0); }
+  div.menu-branding {
+    height: 35vh;
+    transform: translate3d(100%, 0, 0); }
+  .about-info {
+    margin-left: -40px; }
+    .about-info .mybio {
+      grid-row-gap: 30px;
+      grid-template-columns: auto;
+      grid-template-areas: 1fr; }
+      .about-info .mybio .bio-image {
+        margin: auto; }
+    .about-info .academics {
+      grid-template-columns: auto;
+      grid-template-areas: 1fr; }
+    .about-info .skills {
+      grid-template-columns: auto auto;
+      grid-template-areas: 1fr 1fr; } }
+
+@media screen and (max-width: 500px) {
+  main#home {
+    overflow: auto; }
+  main#home h1.lg-heading {
+    margin-top: 30px;
+    margin-left: -40px;
+    font-size: 70px; }
+  .about-info {
+    margin-left: -40px; }
+    .about-info .mybio {
+      grid-row-gap: 30px;
+      grid-template-columns: auto;
+      grid-template-areas: 1fr; }
+    .about-info .academics {
+      grid-template-columns: auto;
+      grid-template-areas: 1fr; }
+    .about-info .skills {
+      grid-template-columns: auto;
+      grid-template-areas: 1fr; } }

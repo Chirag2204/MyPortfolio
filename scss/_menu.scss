@@ -10,7 +10,7 @@
     width: 28px;
     height: 3px;
     margin: 0 0 5px 0;
-    background-color: #fff;
+    background-color: set-text-color($theme);
     @include easeout;
   }
 
@@ -35,7 +35,6 @@
   position: fixed;
   top: 0;
   width: 100%;
-  opacity: 0.9;
   visibility: hidden;
 
   &.show {
@@ -57,7 +56,7 @@
   &-nav {
     margin: 0;
     padding: 0;
-    background: darken($primary-color, 5);
+    background: darken(set-primary-color($theme), 5);
     transform: translate3d(0, -100%, 0);
     @include easeout;
     &.show {
@@ -79,11 +78,11 @@
 
       :hover {
         @include easeout;
-        color: $secondary-color;
+        color: set-secondary-color($theme);
       }
 
       &.current > a {
-        color: $secondary-color;
+        color: set-secondary-color($theme);
       }
     }
   }
@@ -91,7 +90,7 @@
   &-branding {
     margin: 0;
     padding: 0;
-    background: darken($primary-color, 3);
+    background: darken(set-primary-color($theme), 3);
     transform: translate3d(0, 100%, 0);
     @include easeout;
     &.show {
@@ -107,7 +106,7 @@
       border-radius: 50%;
       opacity: 1;
       z-index: 4;
-      border: 3px solid $secondary-color;
+      border: 3px solid set-secondary-color($theme);
     }
   }
 }
