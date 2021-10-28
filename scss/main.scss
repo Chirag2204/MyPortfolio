@@ -170,4 +170,103 @@ main {
     }
   }
 }
+
+////project //////////////////////////
+
+.my-projects {
+  display: grid;
+  grid-gap: 40px;
+  grid-template-columns: auto auto;
+  grid-template-areas: 1fr 1fr;
+
+  img {
+    width: 100%;
+    height: 250px;
+    border: 2px solid white;
+
+    &:hover {
+      opacity: 0.5;
+      border: set-secondary-color($theme);
+      @include easeout;
+    }
+  }
+
+  .item {
+    border: 2px solid grey;
+    padding: 15px;
+    border-radius: 3%;
+    height: 100%;
+
+    .desc {
+      animation: comefromupAnimation ease 2s;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+    }
+
+    .features {
+      animation: comefromdownAnimation ease 4s;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+    }
+    .tech-stack {
+      animation: comefromrightAnimation ease 3s;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+    }
+  }
+}
+
+//Nutton styles
+
+.btn {
+  &-light {
+    margin: 1rem;
+    padding: 0.5rem;
+    background: silver;
+    color: black;
+
+    &:hover {
+      background: set-secondary-color($theme);
+      @include easeout;
+    }
+  }
+
+  &-dark {
+    margin: 1rem;
+    padding: 0.5rem;
+    background: black;
+    color: white;
+
+    &:hover {
+      background: set-secondary-color($theme);
+      @include easeout;
+    }
+  }
+}
+
+//Contact
+.contact-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  text-align: center;
+
+  div {
+    font-size: 2rem;
+    border: 3px solid white;
+    padding: 15px;
+    border-radius: 5%;
+    margin: 20px;
+    animation: comefromdownAnimation ease 4s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+
+    &:hover {
+      @include easeout;
+      opacity: 0.5;
+      background-color: lighten(set-primary-color($theme), 20);
+    }
+  }
+}
+
 @import "mobile";

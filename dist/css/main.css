@@ -236,6 +236,74 @@ main {
       border: 2px solid grey;
       padding: 5px 15px; }
 
+.my-projects {
+  display: grid;
+  grid-gap: 40px;
+  grid-template-columns: auto auto;
+  grid-template-areas: 1fr 1fr; }
+  .my-projects img {
+    width: 100%;
+    height: 250px;
+    border: 2px solid white; }
+    .my-projects img:hover {
+      opacity: 0.5;
+      border: #eece1a;
+      transition: all 0.5s ease-in-out; }
+  .my-projects .item {
+    border: 2px solid grey;
+    padding: 15px;
+    border-radius: 3%;
+    height: 100%; }
+    .my-projects .item .desc {
+      animation: comefromupAnimation ease 2s;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards; }
+    .my-projects .item .features {
+      animation: comefromdownAnimation ease 4s;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards; }
+    .my-projects .item .tech-stack {
+      animation: comefromrightAnimation ease 3s;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards; }
+
+.btn-light {
+  margin: 1rem;
+  padding: 0.5rem;
+  background: silver;
+  color: black; }
+  .btn-light:hover {
+    background: #eece1a;
+    transition: all 0.5s ease-in-out; }
+
+.btn-dark {
+  margin: 1rem;
+  padding: 0.5rem;
+  background: black;
+  color: white; }
+  .btn-dark:hover {
+    background: #eece1a;
+    transition: all 0.5s ease-in-out; }
+
+.contact-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  text-align: center; }
+  .contact-info div {
+    font-size: 2rem;
+    border: 3px solid white;
+    padding: 15px;
+    border-radius: 5%;
+    margin: 20px;
+    animation: comefromdownAnimation ease 4s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards; }
+    .contact-info div:hover {
+      transition: all 0.5s ease-in-out;
+      opacity: 0.5;
+      background-color: #777777; }
+
 @media screen and (max-width: 768px) {
   main {
     align-items: center;
@@ -270,7 +338,16 @@ main {
       grid-template-areas: 1fr; }
     .about-info .skills {
       grid-template-columns: auto auto;
-      grid-template-areas: 1fr 1fr; } }
+      grid-template-areas: 1fr 1fr; }
+  .my-projects {
+    grid-template-columns: auto;
+    grid-template-areas: 1fr;
+    text-align: left; }
+    .my-projects .item {
+      width: 130%; }
+    .my-projects .btn-dark,
+    .my-projects .btn-light {
+      display: inline-block; } }
 
 @media screen and (max-width: 500px) {
   main#home {

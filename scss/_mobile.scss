@@ -60,6 +60,21 @@
       grid-template-areas: 1fr 1fr;
     }
   }
+
+  .my-projects {
+    grid-template-columns: auto;
+    grid-template-areas: 1fr;
+    text-align: left;
+
+    .item {
+      width: 130%;
+    }
+
+    .btn-dark,
+    .btn-light {
+      display: inline-block;
+    }
+  }
 }
 
 //for Mobile Phones

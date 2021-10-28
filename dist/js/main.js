@@ -6,6 +6,7 @@ const menuNav = document.querySelector('.menu-nav')//ul menu nav
 
 const menuBranding = document.querySelector('.menu-branding')//menu Image
 const navItems = document.querySelectorAll('.nav-item')//all nav items in menu
+const body = document.querySelector('body')
 
 //Set Initial State of Menu
 let showMenu = false;

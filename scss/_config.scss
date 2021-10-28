@@ -1,4 +1,4 @@
-$theme: dark;
+$theme: "dark";
 // $primary-color: set-primary-color($theme);
 // $secondary-color: set-secondary-color($theme);
 // $text-color: set-text-color($theme);
@@ -60,11 +60,20 @@ $opacity: 0.9;
   }
 }
 
+@function change-theme($theme) {
+  @if ($theme== "dark") {
+    @return "light";
+  } @else {
+    @return "dark";
+  }
+}
+
 @mixin easeout {
   transition: all 0.5s ease-in-out;
 }
 
 @function set-text-color($theme) {
+  @debug $theme;
   @if ($theme == dark) {
     @return #fff;
   } @else {
@@ -73,7 +82,7 @@ $opacity: 0.9;
 }
 
 @function set-primary-color($theme) {
-  @if ($theme== dark) {
+  @if ($theme == dark) {
     @return #444;
   } @else {
     @return #fff;
