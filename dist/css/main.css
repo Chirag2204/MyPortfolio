@@ -33,7 +33,7 @@
     width: 28px;
     height: 3px;
     margin: 0 0 5px 0;
-    background-color: #fff;
+    background-color: #000;
     transition: all 0.5s ease-in-out; }
   .menu-btn.close {
     transform: rotate(180deg); }
@@ -63,7 +63,7 @@
   .menu-nav {
     margin: 0;
     padding: 0;
-    background: #373737;
+    background: #f2f2f2;
     transform: translate3d(0, -100%, 0);
     transition: all 0.5s ease-in-out; }
     .menu-nav.show {
@@ -79,13 +79,13 @@
         transform: translate3d(0, 0, 0); }
       .menu-nav .nav-item :hover {
         transition: all 0.5s ease-in-out;
-        color: #eece1a; }
+        color: #4971df; }
       .menu-nav .nav-item.current > a {
-        color: #eece1a; }
+        color: #4971df; }
   .menu-branding {
     margin: 0;
     padding: 0;
-    background: #3c3c3c;
+    background: #f7f7f7;
     transform: translate3d(0, 100%, 0);
     transition: all 0.5s ease-in-out; }
     .menu-branding.show {
@@ -98,14 +98,14 @@
       border-radius: 50%;
       opacity: 1;
       z-index: 4;
-      border: 3px solid #eece1a; }
+      border: 3px solid #4971df; }
 
 * {
   box-sizing: border-box; }
 
 body {
-  background-color: #444;
-  color: #fff;
+  background-color: #fff;
+  color: #000;
   margin: 0;
   line-height: 1.5;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; }
@@ -118,7 +118,7 @@ body {
       width: 100%;
       top: 0;
       bottom: 0;
-      background-color: rgba(68, 68, 68, 0.9);
+      background-color: rgba(255, 255, 255, 0.9);
       z-index: -1; }
   body .overlay {
     animation: fadeinAnimation ease 2s;
@@ -139,11 +139,11 @@ h3 {
   h3.sm-heading {
     margin-bottom: 2rem;
     padding: 0.2rem 1rem;
-    background: rgba(73, 73, 73, 0.5);
+    background: rgba(255, 255, 255, 0.5);
     font-size: 1.5rem; }
 
 a {
-  color: #fff;
+  color: #000;
   text-decoration: none; }
 
 header {
@@ -152,7 +152,7 @@ header {
   width: 100%; }
 
 .text-secondary {
-  color: #eece1a; }
+  color: #4971df; }
 
 main {
   padding: 4rem;
@@ -163,7 +163,7 @@ main {
       padding: 0.4rem;
       font-size: 1.5rem; }
       main .icons a:hover {
-        color: #eece1a;
+        color: #4971df;
         font-size: 2rem;
         transition: all 0.5s ease-in-out; }
   main#home {
@@ -186,7 +186,7 @@ main {
     animation-fill-mode: forwards; }
     .about-info .mybio .bio-image {
       border-radius: 50%;
-      border: 2px solid #eece1a; }
+      border: 2px solid #4971df; }
     .about-info .mybio .bio {
       font-size: 1.1rem; }
       .about-info .mybio .bio h3 {
@@ -238,9 +238,9 @@ main {
       .about-info .skills table tr td:hover {
         transition: all 0.5s ease-in-out;
         transform: scale(1.1, 1.1);
-        border: 2px solid #eece1a; }
+        border: 2px solid #4971df; }
     .about-info .skills .rating {
-      color: #eece1a; }
+      color: #4971df; }
 
 .my-projects {
   display: grid;
@@ -253,7 +253,7 @@ main {
     border: 2px solid white; }
     .my-projects img:hover {
       opacity: 0.5;
-      border: #eece1a;
+      border: #4971df;
       transition: all 0.5s ease-in-out; }
   .my-projects .item {
     border: 2px solid grey;
@@ -279,7 +279,7 @@ main {
   background: silver;
   color: black; }
   .btn-light:hover {
-    background: #eece1a;
+    background: #4971df;
     transition: all 0.5s ease-in-out; }
 
 .btn-dark {
@@ -288,7 +288,7 @@ main {
   background: black;
   color: white; }
   .btn-dark:hover {
-    background: #eece1a;
+    background: #4971df;
     transition: all 0.5s ease-in-out; }
 
 .contact-info {
@@ -305,7 +305,7 @@ main {
       width: 100%;
       top: 0;
       bottom: 0;
-      background-color: rgba(68, 68, 68, 0.9);
+      background-color: rgba(255, 255, 255, 0.9);
       z-index: -1; }
   .contact-info div {
     font-size: 2rem;
@@ -319,7 +319,7 @@ main {
     .contact-info div:hover {
       transition: all 0.5s ease-in-out;
       opacity: 0.5;
-      background-color: #777777; }
+      background-color: white; }
 
 @media screen and (max-width: 768px) {
   main {
