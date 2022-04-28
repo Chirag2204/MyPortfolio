@@ -161,12 +161,22 @@ main {
     }
 
     table {
-      td {
-        font-size: 15px;
-        font-weight: 500;
-        border: 2px solid grey;
-        padding: 5px 15px;
+      tr {
+        td {
+          font-size: 15px;
+          font-weight: 500;
+          border: 2px solid grey;
+          padding: 5px 15px;
+          &:hover {
+            @include easeout;
+            transform: scale(1.1, 1.1);
+            border: 2px solid set-secondary-color($theme);
+          }
+        }
       }
+    }
+    .rating {
+      color: set-secondary-color($theme);
     }
   }
 }
@@ -181,7 +191,7 @@ main {
 
   img {
     width: 100%;
-    height: 250px;
+    height: auto;
     border: 2px solid white;
 
     &:hover {
@@ -216,7 +226,7 @@ main {
   }
 }
 
-//Nutton styles
+//Button styles
 
 .btn {
   &-light {
@@ -246,6 +256,7 @@ main {
 
 //Contact
 .contact-info {
+  @include background;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;

@@ -3,7 +3,7 @@ $theme: "dark";
 // $secondary-color: set-secondary-color($theme);
 // $text-color: set-text-color($theme);
 $show-home-image: true;
-$home-image: url("/dist/img/background3.jpg");
+$home-image: url("../img/background1.jpg");
 $opacity: 0.9;
 
 @mixin background {
